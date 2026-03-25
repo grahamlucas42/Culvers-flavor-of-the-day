@@ -3,6 +3,7 @@ name: Monthly Email Job
 on:
   schedule:
     - cron: "0 14 1 * *"
+  workflow_dispatch:
 
 jobs:
   send-email:
