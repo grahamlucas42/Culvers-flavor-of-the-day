@@ -12,5 +12,5 @@ jobs:
     steps:
       - name: Call API securely
         run: |
-          curl -X POST https://your-app.onrender.com/send-emails \
+          curl -X POST https://culvers-flavor-of-the-day.onrender.com/send-emails \
           -H "x-api-key: ${{ secrets.API_KEY }}"
