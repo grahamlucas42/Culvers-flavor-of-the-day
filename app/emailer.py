@@ -25,8 +25,8 @@ def send_email(flavors):
     msg["From"] = sender
     msg["To"] = reciever
 
-    # Send securely (SSL)
-    context = ssl.create_default_context()
-    with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as server:
+    # Send securely
+    with smtplib.SMTP("smtp.gmail.com", 587, timeout=10) as server:
+        server.starttls()
         server.login(sender, password)
         server.send_message(msg)
