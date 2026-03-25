@@ -1,0 +1,16 @@
+name: Monthly Email Job
+
+on:
+  schedule:
+    - cron: "0 14 1 * *"
+  workflow_dispatch:
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Call API securely
+        run: |
+          curl -X POST https://culvers-flavor-of-the-day.onrender.com/send-emails \
+          -H "x-api-key: ${{ secrets.API_KEY }}"
